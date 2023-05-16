@@ -63,6 +63,7 @@ public class MainActivity extends Activity {
 
             long time_delta_millis = current_time_millis - LAST_RECORD_TIME_MILLIS;
             double time_delta_seconds = time_delta_millis / 1000.0;
+            LAST_RECORD_TIME_MILLIS = current_time_millis;
 
             double total_received_bytes_per_sec = total_received_bytes / time_delta_seconds;
             double total_sent_bytes_per_sec = total_sent_bytes / time_delta_seconds;
