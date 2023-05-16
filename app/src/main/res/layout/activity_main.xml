@@ -6,9 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TrafficStats.getTotalRxBytes()"/>
+        <EditText
+            android:id="@+id/edit_text_total_rx_bytes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TrafficStats.getTotalTxBytes()"/>
+        <EditText
+            android:id="@+id/edit_text_total_tx_bytes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TrafficStats.getMobileRxBytes()"/>
+        <EditText
+            android:id="@+id/edit_text_mobile_rx_bytes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TrafficStats.getMobileTxBytes()"/>
+        <EditText
+            android:id="@+id/edit_text_mobile_tx_bytes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RX bytes/s (last one seconds)"/>
+        <EditText
+            android:id="@+id/edit_text_rx_bytes_per_sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TX bytes/s (last one seconds)"/>
+        <EditText
+            android:id="@+id/edit_text_tx_bytes_per_sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="toggle_monitor_thread"
+        android:onClick="on_toggle_monitor_thread_button_clicked"
+        />
 
 </LinearLayout>
