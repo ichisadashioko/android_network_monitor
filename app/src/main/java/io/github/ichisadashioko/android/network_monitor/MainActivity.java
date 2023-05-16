@@ -56,8 +56,27 @@ public class MainActivity extends Activity {
                 LAST_MOBILE_TX_BYTES = total_mobile_sent_bytes_since_boot;
             }
 
+            long total_received_bytes = total_received_bytes_since_boot - LAST_TOTAL_RX_BYTES;
+            long total_sent_bytes = total_sent_bytes_since_boot - LAST_TOTAL_TX_BYTES;
+            long total_mobile_received_bytes = total_mobile_received_bytes_since_boot - LAST_MOBILE_RX_BYTES;
+            long total_mobile_sent_bytes = total_mobile_sent_bytes_since_boot - LAST_MOBILE_TX_BYTES;
 
+            long time_delta_millis = current_time_millis - LAST_RECORD_TIME_MILLIS;
+            double time_delta_seconds = time_delta_millis / 1000.0;
 
+            double total_received_bytes_per_sec = total_received_bytes / time_delta_seconds;
+            double total_sent_bytes_per_sec = total_sent_bytes / time_delta_seconds;
+
+            double total_mobile_received_bytes_per_sec = total_mobile_received_bytes / time_delta_seconds;
+            double total_mobile_sent_bytes_per_sec = total_mobile_sent_bytes / time_delta_seconds;
+
+            edit_text_total_rx_bytes.setText(String.valueOf(total_received_bytes));
+            edit_text_total_tx_bytes.setText(String.valueOf(total_sent_bytes));
+            edit_text_mobile_rx_bytes.setText(String.valueOf(total_mobile_received_bytes));
+            edit_text_mobile_tx_bytes.setText(String.valueOf(total_mobile_sent_bytes));
+
+            edit_text_rx_bytes_per_sec.setText(String.valueOf(total_received_bytes_per_sec));
+            edit_text_tx_bytes_per_sec.setText(String.valueOf(total_sent_bytes_per_sec));
         }catch(Exception ex){
             ex.printStackTrace(System.err);
         }
